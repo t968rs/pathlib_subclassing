@@ -1,4 +1,4 @@
-/.idea/
+.idea/
 *.xml
 *.iml
 *.iws
@@ -7,7 +7,6 @@
 *.DS_Store
 Thumbs.db
 # Logs and databases
-/logs/
 *.log
 *.sql
 *.sqlite
