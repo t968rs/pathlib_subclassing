@@ -5,6 +5,8 @@
 from pathlib import Path as _Path_, PosixPath as _PosixPath_, WindowsPath  as _WindowsPath_
 import os
 from dataclasses import dataclass
+from typing import Optional
+
 
 @dataclass(kw_only=True, frozen=True)
 class PathChild:
