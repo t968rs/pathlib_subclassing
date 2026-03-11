@@ -37,8 +37,8 @@ class PathCN(_Path_) :
     #  so that the subclasses can easily implement functionality for directories without worrying about the correct parent class,
     # also populating a "children" attribute,
 
-class WindowsPath(_WindowsPath_, Path) :
+class WindowsPath(_WindowsPath_, PathCN) :
     pass
 
-class PosixPath(_PosixPath_, Path) :
+class PosixPath(_PosixPath_, PathCN) :
     pass
