@@ -76,7 +76,7 @@ class PathCN(_Path_) :
 
         self._children = [
             self._process_path_item(item)
-            for item in sorted(self.rglob("*"))
+            for item in self.rglob("*")
             if item.is_file()
         ]
         return list(self._children)
