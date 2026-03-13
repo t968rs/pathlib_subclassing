@@ -58,11 +58,11 @@ class TestPathCNInstantiation(unittest.TestCase):
 
     def test_instantiate_from_string(self):
         p = PathCN("/tmp")
-        self.assertEqual(str(p), "/tmp")
+        self.assertEqual(p, Path("/tmp"))
 
     def test_instantiate_from_path(self):
         p = PathCN(Path("/tmp"))
-        self.assertEqual(str(p), "/tmp")
+        self.assertEqual(p, Path("/tmp"))
 
     def test_children_empty_before_walk(self):
         p = PathCN(".")
