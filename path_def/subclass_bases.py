@@ -50,8 +50,11 @@ class PathCN(_Path_) :
 
         return super().__new__(target_cls, *args, **kvps)
 
-    def __init__(self, *args):
-        super().__init__(*args)
+    def __init__(self, *args, **kwargs):
+        # pathlib.Path/PurePath perform initialization in __new__, and their
+        # __init__ is effectively object.__init__ (which takes no arguments).
+        # Avoid passing path segments or other args to super().__init__.
+        super().__init__()
         self._children: list[PathChild] = []
 
     def _process_path_item(self, path: _Path_) -> PathChild:
