@@ -1,6 +1,7 @@
 """Tests evaluating the usability of PathCN and PathChild."""
 import tempfile
 import unittest
+from dataclasses import FrozenInstanceError
 from pathlib import Path
 
 from path_def.subclass_bases import PathChild, PathCN
@@ -44,7 +45,7 @@ class TestPathChildFromParent(unittest.TestCase):
 
     def test_frozen_dataclass(self):
         child = PathChild.from_parent(self.root, self.file)
-        with self.assertRaises(Exception):
+        with self.assertRaises(FrozenInstanceError):
             child.name = "changed"  # type: ignore[misc]
 
 
